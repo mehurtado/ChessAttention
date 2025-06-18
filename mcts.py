@@ -5,7 +5,7 @@
 
 import chess
 import torch
-from torch.cuda.amp import autocast
+from torch.amp import autocast
 import torch.nn.functional as F
 import numpy as np
 import math

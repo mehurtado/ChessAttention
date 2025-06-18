@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Checkpoints, data, and logs
+checkpoints/
+runs/
+*.log
+*.pth
+
+# Common editor/IDE folders
+.vscode/
+.idea/

@@ -30,7 +30,7 @@ MCTS_SIMULATIONS_EVAL = 200    # Number of MCTS simulations per move during eval
 # --- Self-Play (self_play.py) ---
 TEMPERATURE_MOVES = 30  # Number of moves to use temperature sampling (τ=1.0)
 REPLAY_BUFFER_SIZE = 500_000 # Max size of the replay buffer
-NUM_SELF_PLAY_GAMES_PER_ITERATION = 100 # Number of games to generate per AlphaZero iteration
+NUM_SELF_PLAY_GAMES_PER_ITERATION = 15 # Number of games to generate per AlphaZero iteration
 
 # --- Training (train.py) ---
 LEARNING_RATE = 3e-4
@@ -41,7 +41,7 @@ NUM_TRAINING_EPOCHS_PER_ITERATION = 5 # Number of epochs to train per AlphaZero 
 GRAD_CLIP_NORM = None # Optional: max norm for gradient clipping
 
 # --- Evaluation (evaluate.py) ---
-NUM_EVAL_GAMES = 100     # Number of games to play for evaluation
+NUM_EVAL_GAMES = 20     # Number of games to play for evaluation
 EVAL_WIN_RATE_THRESHOLD = 0.55 # Threshold to accept new model
 
 # --- Main Loop (main.py) ---
@@ -51,10 +51,3 @@ TOTAL_AZ_ITERATIONS = 1000 # Total number of AlphaZero iterations
 LOG_LEVEL = "INFO"
 CHECKPOINT_DIR = "./checkpoints"
 TENSORBOARD_LOG_DIR = "./runs" # For TensorBoard or WandB project name
-
-# You can use a library like OmegaConf or Hydra for more complex config management
-# For now, this file serves as a central place for constants.
-
-# Example of how to load these in other files:
-# import config
-# learning_rate = config.LEARNING_RATE
