@@ -6,6 +6,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import torch.jit
 import math
 
 import config # Assuming your config.py
@@ -156,6 +157,12 @@ if __name__ == '__main__':
     assert value.shape == (batch_size, 1), "Value output shape mismatch"
 
     print("\nModel forward pass test successful.")
+    print("\n--- Minimal JIT Scripting Test ---")
+    try:
+        scripted_model_test = torch.jit.script(model)
+        print("JIT SCRIPTING SUCCEEDED")
+    except Exception as e:
+        print(f"JIT SCRIPTING FAILED: {e}")
 
     # Check VRAM usage (conceptual - requires GPU and tools like nvidia-smi or PyTorch utils)
     if torch.cuda.is_available():
