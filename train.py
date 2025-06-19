@@ -46,7 +46,7 @@ def train_step(
         # Target policies are distributions (probabilities from MCTS visit counts).
         # CrossEntropyLoss expects raw logits as input and class indices or probabilities as target.
         # If target_policies are probabilities, use KLDivLoss or custom CE.
-        # AlphaZero uses: sum_a pi(a) * log p(a) which is CE.
+    # ChessAttention uses: sum_a pi(a) * log p(a) which is CE.
         # PyTorch CrossEntropyLoss(logits, probabilities) is not standard.
         # Usually it's CrossEntropyLoss(logits, class_indices).
         # For targets as distributions: -sum(target_probs * log_softmax(logits))
