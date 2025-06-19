@@ -1,10 +1,10 @@
-# Project Title: AttentionalAlphaZeroChess
+# Project Title: ChessAttention
 
 ## Description
-This project implements a chess-playing AI based on the AlphaZero algorithm, utilizing an attention-based neural network (Transformer) for policy and value prediction, and Monte Carlo Tree Search (MCTS) for move selection. The system learns and improves by playing games against itself.
+This project implements a chess-playing AI based on the ChessAttention algorithm, utilizing an attention-based neural network (Transformer) for policy and value prediction, and Monte Carlo Tree Search (MCTS) for move selection. The system learns and improves by playing games against itself.
 
 ## Features
-- **AlphaZero Algorithm**: Implements the core self-play, training, and evaluation loop.
+- **ChessAttention Algorithm**: Implements the core self-play, training, and evaluation loop.
 - **Attention-Based Neural Network**: Uses a Transformer encoder architecture for learning chess patterns, policy (move probabilities), and value (game outcome prediction).
 - **Monte Carlo Tree Search (MCTS)**: Employs MCTS for guiding move selection during self-play and evaluation, balancing exploration and exploitation.
 - **Self-Play Learning**: Generates training data by playing games against its current best version.
@@ -18,8 +18,8 @@ This project implements a chess-playing AI based on the AlphaZero algorithm, uti
 ## Installation
 1.  **Clone the repository:**
     ```bash
-    git clone <repository-url>
-    cd AttentionalAlphaZeroChess
+    git clone https://github.com/mehurtado/ChessAttention
+    cd ChessAttention
     ```
 2.  **Create a virtual environment (recommended):**
     ```bash
@@ -34,14 +34,14 @@ This project implements a chess-playing AI based on the AlphaZero algorithm, uti
     (Note: Adjust PyTorch installation command based on your system (CUDA version or CPU-only) by visiting https://pytorch.org/)
 
 ## Usage
-The main entry point for the AlphaZero training loop is `main.py`.
+The main entry point for the ChessAttention training loop is `main.py`.
 
 ```bash
 python main.py
 ```
 This script will:
 1.  Initialize the neural network (either randomly or from a checkpoint).
-2.  Start the AlphaZero loop:
+2.  Start the ChessAttention loop:
     *   **Self-Play**: Generate games using the current best network and MCTS, storing data in the replay buffer.
     *   **Training**: Train a new candidate network on data sampled from the replay buffer.
     *   **Evaluation**: Evaluate the candidate network against the current best network. If the candidate is significantly better, it becomes the new best network.
@@ -49,7 +49,7 @@ This script will:
 4.  (Conceptual) TensorBoard logs may be saved in `./runs`.
 
 ### Key Scripts:
--   `main.py`: Orchestrates the main AlphaZero loop.
+-   `main.py`: Orchestrates the main ChessAttention loop.
 -   `train.py`: Handles the training of the neural network.
 -   `self_play.py`: Manages the self-play game generation.
 -   `evaluate.py`: Compares the performance of two network versions.
@@ -57,10 +57,10 @@ This script will:
 
 ## File Structure
 ```
-AttentionalAlphaZeroChess/
+AttentionalChessAttention/
 ├── README.md                 # This file
 ├── config.py                 # Centralized configuration for hyperparameters
-├── main.py                   # Main script for running the AlphaZero loop
+├── main.py                   # Main script for running the ChessAttention loop
 ├── model.py                  # Neural network architecture (AttentionChessNet)
 ├── mcts.py                   # Monte Carlo Tree Search implementation
 ├── chess_env.py              # Chess environment wrapper using python-chess

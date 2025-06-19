@@ -2,7 +2,7 @@
 # Objective: Centralized configuration for hyperparameters and settings.
 
 # --- General ---
-PROJECT_NAME = "AttentionalAlphaZeroChess"
+PROJECT_NAME = "AttentionalChessAttention"
 DEVICE = "cuda" # "cuda" or "cpu"
 RANDOM_SEED = 42
 
@@ -45,7 +45,7 @@ NUM_EVAL_GAMES = 20     # Number of games to play for evaluation
 EVAL_WIN_RATE_THRESHOLD = 0.55 # Threshold to accept new model
 
 # --- Main Loop (main.py) ---
-TOTAL_AZ_ITERATIONS = 1000 # Total number of AlphaZero iterations
+TOTAL_CA_ITERATIONS = 1000 # Total number of AlphaZero iterations
 
 # --- Logging & Checkpointing ---
 LOG_LEVEL = "INFO"
