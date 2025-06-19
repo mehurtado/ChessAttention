@@ -1,4 +1,4 @@
-# Project Title: AttentionalChessAttention
+# Project Title: ChessAttention
 
 ## Description
 This project implements a chess-playing AI based on the ChessAttention algorithm, utilizing an attention-based neural network (Transformer) for policy and value prediction, and Monte Carlo Tree Search (MCTS) for move selection. The system learns and improves by playing games against itself.
