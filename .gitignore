@@ -11,3 +11,7 @@ runs/
 # Common editor/IDE folders
 .vscode/
 .idea/
+
+# Virtual environments
+.venv/
+venv/

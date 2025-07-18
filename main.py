@@ -95,9 +95,9 @@ def main_alpha_zero_loop():
 
 
     print("\n--- Starting AlphaZero Main Loop ---")
-    for az_iteration in range(iteration_start, config.TOTAL_AZ_ITERATIONS):
+    for az_iteration in range(iteration_start, config.TOTAL_CA_ITERATIONS):
         iteration_time_start = time.time()
-        print(f"\n===== AlphaZero Iteration: {az_iteration + 1}/{config.TOTAL_AZ_ITERATIONS} =====")
+        print(f"\n===== AlphaZero Iteration: {az_iteration + 1}/{config.TOTAL_CA_ITERATIONS} =====")
 
         # --- a. Self-Play Phase ---
         print(f"\n--- Phase: Self-Play (Iteration {az_iteration + 1}) ---")
