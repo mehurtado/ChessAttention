@@ -18,7 +18,7 @@ This project implements a chess-playing AI based on the ChessAttention algorithm
 ## Installation
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/mehurtado/ChessAttention
+    git clone git@github.com:mehurtado/ChessAttention.git
     cd ChessAttention
     ```
 2.  **Create a virtual environment (recommended):**
