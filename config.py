@@ -14,10 +14,10 @@ POLICY_OUTPUT_SIZE = 4672 # 8x8x73 (Queen moves + Knight moves + Underpromotions
 
 # --- Neural Network (model.py) ---
 # Model Architecture
-D_MODEL = 256           # Embedding dimension (e.g., 256 or 384)
+D_MODEL = 128           # Embedding dimension (e.g., 256 or 384)
 N_HEADS = 4             # Number of attention heads (e.g., 4 or 8)
-NUM_ENCODER_LAYERS = 6  # Number of Transformer encoder blocks (e.g., 4-8)
-DIM_FEEDFORWARD_SCALE = 4 # Factor for FFN dimension in Transformer blocks (e.g., 4 * d_model)
+NUM_ENCODER_LAYERS = 4  # Number of Transformer encoder blocks (e.g., 4-8)
+DIM_FEEDFORWARD_SCALE = 2 # Factor for FFN dimension in Transformer blocks (e.g., 4 * d_model)
 DROPOUT_RATE = 0.1
 
 # --- MCTS (mcts.py) ---
@@ -38,7 +38,7 @@ BATCH_SIZE = 256        # (e.g., 256-512, constrained by VRAM)
 L2_REG_CONST = 1e-4
 NUM_TRAINING_EPOCHS_PER_ITERATION = 5 # Number of epochs to train per AlphaZero iteration
 # Or NUM_TRAINING_STEPS_PER_ITERATION = 1000
-GRAD_CLIP_NORM = None # Optional: max norm for gradient clipping
+GRAD_CLIP_NORM = 1.0 # Optional: max norm for gradient clipping
 
 # --- Evaluation (evaluate.py) ---
 NUM_EVAL_GAMES = 20     # Number of games to play for evaluation

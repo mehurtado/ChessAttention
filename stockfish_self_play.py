@@ -92,6 +92,9 @@ class StockfishConfig:
         self.temperature_moves = 30
         self.max_game_moves = 400
         self.mcts_simulations = 800
+        self.C_PUCT = 1.5
+        self.DIRICHLET_ALPHA = 0.3
+        self.DIRICHLET_EPSILON = 0.25
         
         # Logging and saving
         self.log_level = "INFO"
@@ -471,7 +474,7 @@ class EnhancedStockfishSelfPlay:
         values = torch.tensor(combined_rewards, dtype=torch.float32).to(self.device)
         
         # Setup optimizer
-        optimizer = optim.Adam(
+        optimizer = optim.AdamW(
             self.model.parameters(),
             lr=self.config.learning_rate,
             weight_decay=self.config.weight_decay
