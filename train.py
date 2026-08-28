@@ -57,19 +57,7 @@ def train_step(
         # Value Loss: Mean Squared Error between predicted values and game outcomes
         value_loss = F.mse_loss(pred_values, target_values)
 
-        # L2 Regularization (if not handled by optimizer like AdamW)
-        # AdamW's weight_decay is often preferred over manual L2 loss term.
-        # If using AdamW with weight_decay > 0, this manual L2 might be redundant or even harmful.
-        # If AdamW weight_decay is 0, or using SGD, then manual L2 is needed.
-        l2_loss = torch.tensor(0.0).to(device)
-        if l2_reg_const > 0 and not isinstance(optimizer, optim.AdamW): # Check if AdamW is not already doing it
-            for param in model.parameters():
-                # Exclude biases and LayerNorm/BatchNorm weights if desired
-                if param.dim() > 1: # Typically only apply L2 to weights, not biases/layernorm
-                    l2_loss += torch.norm(param)**2
-            l2_loss *= l2_reg_const
-        
-        total_loss = policy_loss + value_loss + l2_loss
+        total_loss = policy_loss + value_loss
     
     # Backward pass and optimizer step with GradScaler
     if device.type == 'cuda':
@@ -136,6 +124,7 @@ def training_loop(
 # --- Testing ---
 if __name__ == '__main__':
     import numpy as np
+    import random
     from tqdm import tqdm
 
     print("Training Pipeline Testing")
